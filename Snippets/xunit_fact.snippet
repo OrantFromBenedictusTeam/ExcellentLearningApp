@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>xUnit Fact</Title>
+      <Shortcut>fact</Shortcut>
+      <Description>Code snippet for an xUnit test method (Fact) following the naming convention UnitOfWork_StateUnderTest_ExpectedBehaviour.</Description>
+      <Author>Marc Duiker</Author>
+    </Header>
+    <Snippet>
+      <Imports>
+        <Import>
+          <Namespace>Xunit</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal>
+          <ID>StateUnderTest</ID>
+          <ToolTip>Describe the initial state or preconditions.</ToolTip>
+          <Default>StateUnderTest</Default>
+        </Literal>
+        <Literal>
+          <ID>ExpectedBehavior</ID>
+          <ToolTip>Describe the expected behaviour or outcome.</ToolTip>
+          <Default>ExpectedBehaviour</Default>
+        </Literal>
+          <Literal Editable="false">
+            <ID>Fact</ID>
+            <Function>SimpleTypeName(Fact)</Function>
+          </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[[$Fact$]
+      public void Should_$ExpectedBehavior$_When_$StateUnderTest$()
+      {
+          // Arrange
+          $end$
+          // Act
+
+          // Assert
+          
+      }]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
