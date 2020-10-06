@@ -1,8 +1,14 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home page";
+}
+<div id="test"></div>
+
+@section Scripts
+{
+    <script src="/dist/home.build.js"></script>
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@section Styles
+{
+    <link rel="stylesheet" type="text/css" href="/dist/home.build.css"/>
+}
