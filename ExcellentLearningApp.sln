@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExcellentLearningApp", "ExcellentLearningApp\ExcellentLearningApp.csproj", "{603AA0AA-6B47-4BB3-A0AC-D7FB56C31204}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcellentLearningApp.Tests", "ExcellentLearningApp.Tests\ExcellentLearningApp.Tests.csproj", "{80CA4D63-05E9-4DE4-99DB-804F28D02E67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExcellentLearningApp.Tests", "ExcellentLearningApp.Tests\ExcellentLearningApp.Tests.csproj", "{80CA4D63-05E9-4DE4-99DB-804F28D02E67}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
