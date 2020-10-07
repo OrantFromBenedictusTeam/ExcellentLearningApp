@@ -11,5 +11,6 @@ namespace ExcellentLearningApp.Model.Repositories
         void Delete(int id);
         TEntity Get(int id);
         IQueryable<TEntity> GetAll();
+        void Update(TEntity entity); 
     }
 }

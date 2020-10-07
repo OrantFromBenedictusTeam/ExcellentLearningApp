@@ -1,9 +1,7 @@
 ﻿using ExcellentLearningApp.Model;
 using ExcellentLearningApp.Model.Repositories;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Xunit;
 
 namespace ExcellentLearningApp.Tests
@@ -15,6 +13,7 @@ namespace ExcellentLearningApp.Tests
         {
             // Arrange
             IRepository<Entity> repository = new RepositoryFake<Entity>();
+            (repository as RepositoryFake<Entity>).Reset();
 
             // Act
             var createdEntityId = repository.Create(new Entity());
@@ -23,6 +22,7 @@ namespace ExcellentLearningApp.Tests
             // Assert
             repository.Get(createdEntityId); //Should not throw exception
             Assert.True(entities.Count == 1);
+            Assert.Equal(1, createdEntityId);
         }
 
         [Fact]
@@ -30,6 +30,8 @@ namespace ExcellentLearningApp.Tests
         {
             // Arrange
             IRepository<Entity> repository = new RepositoryFake<Entity>();
+            (repository as RepositoryFake<Entity>).Reset();
+            
             // Act
             var deletingEntityId = repository.Create(new Entity());
             repository.Delete(deletingEntityId);
@@ -41,6 +43,26 @@ namespace ExcellentLearningApp.Tests
                 repository.Get(deletingEntityId);
             });
             Assert.False(entities.Any());
+        }
+
+        [Fact]
+        public void Should_UpdateEntity()
+        {
+            // Arrange
+            IRepository<Entity> repository = new RepositoryFake<Entity>();
+            (repository as RepositoryFake<Entity>).Reset();
+            var oldEntity = new Entity();
+            var newEntity = new Entity();
+
+            // Act
+            var entityId = repository.Create(oldEntity);
+            newEntity.Id = entityId;
+            repository.Update(newEntity);
+            var currentEntity = repository.Get(entityId);
+
+            // Assert
+            Assert.Equal(newEntity.Date, currentEntity.Date);
+            Assert.Equal(oldEntity.Id, currentEntity.Id);
         }
     }
 }
