@@ -21,7 +21,7 @@ namespace ExcellentLearningApp.Infrastructure
 
             var expandViewLocations = new List<string>
             {
-                "/Features/{1}/{0}.cshtml",
+                "/Features/{1}/Views/{0}/{0}.cshtml",
                 "/Features/Shared/{0}.cshtml",
             };
 

@@ -9,7 +9,7 @@ module.exports = (env, argv) => {
     return {
         mode: argv.mode === "production" ? "production" : "development",
         entry: {
-            home: ['./Features/Home/index.js','./Features/Home/style.scss'],
+            home_index: ['./Features/Home/Views/Index/scripts.js','./Features/Home/Views/Index/style.scss'],
         },
         output: {
             publicPath: "/dist/",
