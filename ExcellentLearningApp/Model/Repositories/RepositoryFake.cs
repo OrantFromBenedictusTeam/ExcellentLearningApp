@@ -1,5 +1,4 @@
-﻿using ExcellentLearningApp.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -8,7 +7,7 @@ namespace ExcellentLearningApp.Model.Repositories
     public class RepositoryFake<TEntity> : IRepository<TEntity> 
         where TEntity: IEntity
     {
-        private static List<TEntity> _entities;
+        private static List<TEntity> _entities = new List<TEntity>();
         private static int _nextId;
 
         public void Reset()

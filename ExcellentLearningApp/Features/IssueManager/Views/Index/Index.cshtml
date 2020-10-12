@@ -1,0 +1,39 @@
+﻿@model ExcellentLearningApp.Features.IssueManager.Models.IssueManagerModel
+@using ExcellentLearningApp.Infrastructure.Extensions
+
+@{
+    ViewData["Title"] = "Issue Manager";
+}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            @foreach (var prop in Model.Issue.GetType().GetPropNames())
+            {
+                <th scope="col">@(prop.DisplayName ?? prop.Name)</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var issue in Model.Issues)
+        {
+            <tr>
+                @foreach (var prop in Model.Issue.GetType().GetProperties())
+                {
+                    <td>@prop.GetValue(issue)</td>
+                }
+            <td>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle p-1 m-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Akcje
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Edytuj</a>
+                        <a class="dropdown-item" href="#">Usuń</a>
+                    </div>
+                </div>
+            </td>
+            </tr>
+        }
+    </tbody>
+</table>
