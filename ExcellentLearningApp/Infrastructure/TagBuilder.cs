@@ -19,6 +19,15 @@ namespace ExcellentLearningApp.Infrastructure
             return this;
         }
 
+        public TagBuilder AddChild(HtmlElement element)
+        {
+            _rootTag.AddElement(element);
+            return this;
+        }
+
+        public HtmlElement Build() =>
+            _rootTag;
+
         private HtmlElement CreateElement(
             string name,
             string text = null,
